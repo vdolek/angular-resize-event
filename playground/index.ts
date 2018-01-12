@@ -9,6 +9,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AngularResizedEventModule, ResizedEvent } from 'angular-resize-event';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'app',
   styles: ['div { width: 50%; height: 50vh; size: 50%; font-size: 4em; background: red; resize: both; overflow: hidden; }'],
   template: `
