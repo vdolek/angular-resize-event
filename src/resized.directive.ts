@@ -18,11 +18,9 @@ export class ResizedDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    this.oldWidth = this.element.nativeElement.clientWidth;
-    this.oldHeight = this.element.nativeElement.clientHeight;
-
     // tslint:disable-next-line:no-unused-expression
     new ResizeSensor(this.element.nativeElement, x => this.onResized());
+    this.onResized();
   }
 
   private onResized(): void {

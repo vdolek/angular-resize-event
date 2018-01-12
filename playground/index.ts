@@ -10,7 +10,7 @@ import { AngularResizedEventModule, ResizedEvent } from 'angular-resize-event';
 
 @Component({
   selector: 'app',
-  styles: ['div { width: 50%; height: 50vh; line-height:50vh; background: red; vertical-align: middle; text-align: center; }'],
+  styles: ['div { width: 50%; height: 50vh; size: 50%; font-size: 4em; background: red; resize: both; overflow: hidden; }'],
   template: `
   <div (resized)="onResized($event)">
     {{ width }}x{{ height }}
