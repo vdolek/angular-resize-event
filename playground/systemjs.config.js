@@ -27,7 +27,9 @@
       // other libraries
       rxjs: 'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      'angular-resize-event': '../dist'
+      'angular-resize-event': '../dist',
+
+      'css-element-queries': 'npm:css-element-queries'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -44,6 +46,10 @@
       },
       'angular-resize-event': {
         main: 'angular-resize-event.umd.js',
+        defaultExtension: 'js'
+      },
+      'css-element-queries': {
+        main: 'index.js',
         defaultExtension: 'js'
       }
     }
