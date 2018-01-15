@@ -8,9 +8,9 @@ To install this library, run:
 $ npm install angular-resize-event --save
 ```
 
-## Consuming your library
+## Using the library
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
+Import the library in any Angular application by running:
 
 ```bash
 $ npm install angular-resize-event
@@ -38,16 +38,16 @@ import { AngularResizedEventModule } from 'angular-resize-event';
     AngularResizedEventModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once your library is imported, you can use its `resized` directive in your Angular application:
 
 ```xml
 <!-- You can now use your library component in app.component.html -->
-<div (resized)="onResized(event)"></div>
+<div (resized)="onResized($event)"></div>
 ```
 
 ```typescript
