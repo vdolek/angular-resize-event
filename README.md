@@ -46,7 +46,6 @@ export class AppModule { }
 Once your library is imported, you can use its `resized` directive in your Angular application:
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
 <div (resized)="onResized($event)"></div>
 ```
 
