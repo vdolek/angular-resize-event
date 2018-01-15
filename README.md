@@ -2,6 +2,8 @@
 
 Angular 5 directive for detecting element size changed event.
 
+## Build Status
+
 [![Build Status](https://travis-ci.org/vdolek/angular-resize-event.svg?branch=master)](https://travis-ci.org/vdolek/angular-resize-event)
 
 ## Installation
