@@ -8,9 +8,9 @@ To install this library, run:
 $ npm install angular-resize-event --save
 ```
 
-## Consuming your library
+## Using the library
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
+Import the library in any Angular application by running:
 
 ```bash
 $ npm install angular-resize-event
@@ -25,7 +25,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'angular-resize-event';
+import { AngularResizedEventModule } from 'angular-resize-event';
 
 @NgModule({
   declarations: [
@@ -34,37 +34,34 @@ import { SampleModule } from 'angular-resize-event';
   imports: [
     BrowserModule,
 
-    // Specify your library as an import
-    LibraryModule
+    // Specify AngularResizedEventModule library as an import
+    AngularResizedEventModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once your library is imported, you can use its `resized` directive in your Angular application:
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<div (resized)="onResized($event)"></div>
 ```
 
-## Development
+```typescript
+import { ResizedEvent } from 'angular-resize-event';
 
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+@Component({...})
+class MyComponent {
+  width: number;
+  height: number;
 
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
+  onResized(event: ResizedEvent): void {
+    this.width = event.newWidth;
+    this.height = event.newHeight;
+  }
+}
 ```
 
 ## License
