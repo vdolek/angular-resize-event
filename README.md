@@ -25,7 +25,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'angular-resize-event';
+import { AngularResizedEventModule } from 'angular-resize-event';
 
 @NgModule({
   declarations: [
@@ -34,8 +34,8 @@ import { SampleModule } from 'angular-resize-event';
   imports: [
     BrowserModule,
 
-    // Specify your library as an import
-    LibraryModule
+    // Specify AngularResizedEventModule library as an import
+    AngularResizedEventModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -47,24 +47,22 @@ Once your library is imported, you can use its components, directives and pipes 
 
 ```xml
 <!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<div (resized)="onResized(event)"></div>
 ```
 
-## Development
+```typescript
+import { ResizedEvent } from 'angular-resize-event';
 
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+@Component({...})
+class MyComponent {
+  width: number;
+  height: number;
 
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
+  onResized(event: ResizedEvent): void {
+    this.width = event.newWidth;
+    this.height = event.newHeight;
+  }
+}
 ```
 
 ## License
