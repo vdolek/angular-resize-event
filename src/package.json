@@ -1,6 +1,6 @@
 {
   "name": "angular-resize-event",
-  "version": "0.3.2",
+  "version": "0.4.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/vdolek/angular-resize-event"
@@ -20,9 +20,11 @@
   "module": "angular-resize-event.js",
   "jsnext:main": "angular-resize-event.js",
   "typings": "angular-resize-event.d.ts",
+  "dependencies": {
+    "css-element-queries": "^1.0.1"
+  },
   "peerDependencies": {
     "@angular/core": "^4.0.0",
-    "css-element-queries": "^1.0.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   }

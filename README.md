@@ -1,14 +1,12 @@
-# angular-resize-event
+# Angular Resize Event
 
-Angular 5 directive for detecting element size changed event.
+Angular 5 directive for detecting changes of an element size.
 
-## Installation
+It internally uses `ResizeSensor` from [CSS Element Queries](https://github.com/marcj/css-element-queries).
 
-To install this library, run:
+## Build Status
 
-```bash
-$ npm install angular-resize-event --save
-```
+[![Build Status](https://travis-ci.org/vdolek/angular-resize-event.svg?branch=master)](https://travis-ci.org/vdolek/angular-resize-event)
 
 ## Using the library
 
