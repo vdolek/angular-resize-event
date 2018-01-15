@@ -1,5 +1,7 @@
 # angular-resize-event
 
+Angular 5 directive for checking resize of element.
+
 ## Installation
 
 To install this library, run:
@@ -21,10 +23,9 @@ and then from your Angular `AppModule`:
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 
-// Import your library
+// Import the library module
 import { AngularResizedEventModule } from 'angular-resize-event';
 
 @NgModule({
@@ -50,6 +51,9 @@ Once your library is imported, you can use its `resized` directive in your Angul
 ```
 
 ```typescript
+import { Component } from '@angular/core';
+
+// Import the resized event model
 import { ResizedEvent } from 'angular-resize-event';
 
 @Component({...})
