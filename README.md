@@ -4,9 +4,11 @@ Angular 5 directive for detecting changes of an element size.
 
 It internally uses `ResizeSensor` from [CSS Element Queries](https://github.com/marcj/css-element-queries).
 
-## Build Status
+## External Links
 
 [![Build Status](https://travis-ci.org/vdolek/angular-resize-event.svg?branch=master)](https://travis-ci.org/vdolek/angular-resize-event)
+
+[![npm](https://img.shields.io/npm/v/angular-resize-event.svg)](https://www.npmjs.com/package/angular-resize-event)
 
 ## Using the library
 
