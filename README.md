@@ -1,6 +1,8 @@
 # Angular Resize Event
 
-Angular 5 directive for detecting changes of an element size. It is as simple as:
+Angular 5 directive for detecting changes of an element size.
+
+It is as simple as:
 
 ```xml
 <div (resized)="onResized($event)"></div>
