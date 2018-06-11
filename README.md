@@ -57,7 +57,7 @@ Once your library is imported, you can use its `resized` directive in your Angul
 import { Component } from '@angular/core';
 
 // Import the resized event model
-import { ResizedEvent } from 'angular-resize-event';
+import { ResizedEvent } from 'angular-resize-event/resized-event';
 
 @Component({...})
 class MyComponent {
