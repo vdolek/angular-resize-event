@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/angular-resize-event",
+  "lib": {
+    "entryFile": "src/index.ts",
+    "umdModuleIds": {
+      "css-element-queries": "css-element-queries"
+    }
+  },
+  "whitelistedNonPeerDependencies": [
+    "css-element-queries"
+  ]
+}
