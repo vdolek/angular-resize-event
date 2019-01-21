@@ -7,7 +7,6 @@ import { ResizedEvent } from './resized-event';
 })
 export class ResizedDirective implements OnInit {
 
-
   @Output()
   readonly resized = new EventEmitter<ResizedEvent>();
 
