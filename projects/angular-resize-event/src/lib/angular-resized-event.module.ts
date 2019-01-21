@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ResizedDirective } from './resized.directive';
-import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [ResizedDirective],

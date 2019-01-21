@@ -1,6 +1,6 @@
-import {Directive, ElementRef, EventEmitter, OnInit, Output} from '@angular/core';
-import {ResizedEvent} from './resized-event';
+import { Directive, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
 import { ResizeSensor } from 'css-element-queries';
+import { ResizedEvent } from './resized-event';
 
 @Directive({
   selector: '[resized]'

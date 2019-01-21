@@ -1,5 +1,5 @@
+import { ElementRef } from '@angular/core';
 import { ResizedDirective } from './resized.directive';
-import {ElementRef} from '@angular/core';
 
 describe('ResizedDirective', () => {
   it('should create an instance', () => {
