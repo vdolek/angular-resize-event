@@ -1,21 +1,14 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/spec",
-    "types": [
-      "jasmine",
-      "node"
-    ],
+    "outDir": "../out-tsc/app",
+    "types": [],
     "paths": {
       "angular-resize-event": ["projects/angular-resize-event/src"]
     }
   },
-  "files": [
+  "exclude": [
     "test.ts",
-    "polyfills.ts"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
+    "**/*.spec.ts"
   ]
 }
