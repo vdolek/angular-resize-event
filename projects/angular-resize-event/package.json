@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "css-element-queries": "1.1.1"
+    "css-element-queries": "1.2.0"
   },
   "peerDependencies": {
     "@angular/core": "^7.1.0",
