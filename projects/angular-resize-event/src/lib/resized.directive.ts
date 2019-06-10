@@ -1,11 +1,11 @@
-import { Directive, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, OnInit, Output, OnDestroy } from '@angular/core';
 import { ResizeSensor } from 'css-element-queries';
 import { ResizedEvent } from './resized-event';
 
 @Directive({
   selector: '[resized]'
 })
-export class ResizedDirective implements OnInit {
+export class ResizedDirective implements OnInit, OnDestroy {
 
   @Output()
   readonly resized = new EventEmitter<ResizedEvent>();
@@ -13,13 +13,17 @@ export class ResizedDirective implements OnInit {
   private oldWidth: number;
   private oldHeight: number;
 
+  private resizeSensor: ResizeSensor;
+
   constructor(private readonly element: ElementRef) {
   }
 
   ngOnInit() {
-    // tslint:disable-next-line:no-unused-expression
-    new ResizeSensor(this.element.nativeElement, _ => this.onResized());
-    this.onResized();
+    this.resizeSensor = new ResizeSensor(this.element.nativeElement, () => this.onResized());
+  }
+
+  ngOnDestroy() {
+    this.resizeSensor.detach();
   }
 
   private onResized() {
