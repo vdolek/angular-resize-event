@@ -23,7 +23,9 @@ export class ResizedDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.resizeSensor.detach();
+    if (this.resizeSensor) {
+      this.resizeSensor.detach();
+    }
   }
 
   private onResized() {
