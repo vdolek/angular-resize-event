@@ -1,6 +1,6 @@
 # Angular Resize Event
 
-Angular 7 directive for detecting changes of an element size.
+Angular 8 directive for detecting changes of an element size.
 
 It is as simple as:
 
