@@ -5,9 +5,6 @@
     "type": "git",
     "url": "https://github.com/vdolek/angular-resize-event"
   },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
-  },
   "author": {
     "name": "Martin Volek",
     "email": "martin@vdolek.cz"
