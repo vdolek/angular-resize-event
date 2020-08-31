@@ -2,5 +2,46 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "angular-resize-event": {
+      "projectType": "library",
+      "root": "projects/angular-resize-event",
+      "sourceRoot": "projects/angular-resize-event/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-resize-event/tsconfig.lib.json",
+            "project": "projects/angular-resize-event/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-resize-event/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-resize-event/src/test.ts",
+            "tsConfig": "projects/angular-resize-event/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-resize-event/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-resize-event/tsconfig.lib.json",
+              "projects/angular-resize-event/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "angular-resize-event"
 }
