@@ -7,4 +7,4 @@ import { ResizedDirective } from './resized.directive';
   ],
   exports: [ResizedDirective]
 })
-export class AngularResizeEventModule { }
+export class AngularResizedEventModule { }

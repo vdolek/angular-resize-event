@@ -4,7 +4,8 @@
   "scripts": {
     "build": "ng build --prod",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "postbuild": "cp README.md dist/angular-resize-event/README.md"
   },
   "private": true,
   "dependencies": {

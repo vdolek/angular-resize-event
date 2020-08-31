@@ -26,17 +26,13 @@ $ npm install angular-resize-event
 
 and then from your Angular `AppModule`:
 
-| :warning: WARNING          |
-|:---------------------------|
-| Module name was changed in version 2.0.0 from `AngularResizedEventModule` to `AngularResizeEventModule`. |
-
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import the library module
-import { AngularResizeEventModule } from 'angular-resize-event';
+import { AngularResizedEventModule } from 'angular-resize-event';
 
 @NgModule({
   declarations: [
@@ -45,8 +41,8 @@ import { AngularResizeEventModule } from 'angular-resize-event';
   imports: [
     BrowserModule,
 
-    // Specify AngularResizeEventModule library as an import
-    AngularResizeEventModule
+    // Specify AngularResizedEventModule library as an import
+    AngularResizedEventModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
