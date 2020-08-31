@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AngularResizeEventModule } from 'angular-resize-event';
+import { AngularResizedEventModule } from 'angular-resize-event';
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AngularResizeEventModule
+    AngularResizedEventModule
   ],
   providers: [],
   bootstrap: [AppComponent]
