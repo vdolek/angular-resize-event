@@ -3,6 +3,7 @@ import { ResizeSensor } from 'css-element-queries';
 import { ResizedEvent } from './resized-event';
 
 @Directive({
+  // tslint:disable-next-line:directive-selector
   selector: '[resized]'
 })
 export class ResizedDirective implements OnInit, OnDestroy {
