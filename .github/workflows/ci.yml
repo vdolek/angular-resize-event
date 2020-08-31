@@ -23,7 +23,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm --prefix projects/angular-resize-event ci projects/angular-resize-event
     - run: npm run lint
     - run: npm run build
-    - run: npm test
+#    - run: npm test
