@@ -1,17 +1,20 @@
 # Angular Resize Event
 
-Angular 7 directive for detecting changes of an element size.
+[![github version](https://img.shields.io/github/package-json/v/vdolek/angular-resize-event/master?label=github)](https://github.com/vdolek/angular-resize-event)
+[![npm version](https://img.shields.io/npm/v/angular-resize-event)](https://www.npmjs.com/package/angular-resize-event)
+[![build status](https://img.shields.io/github/workflow/status/vdolek/angular-resize-event/CI/master)](https://github.com/vdolek/angular-resize-event/actions?query=workflow%3ACI)
+[![downloads](https://img.shields.io/npm/dt/angular-resize-event)](https://www.npmjs.com/package/angular-resize-event)
+[![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/vdolek/angular-resize-event)](https://snyk.io/test/github/vdolek/angular-resize-event)
+
+Angular directive for detecting changes of an element size.
 
 It is as simple as:
 
-```xml
+```html
 <div (resized)="onResized($event)"></div>
 ```
 
 It internally uses `ResizeSensor` from [CSS Element Queries](https://github.com/marcj/css-element-queries).
-
-[![Build Status](https://travis-ci.org/vdolek/angular-resize-event.svg?branch=master)](https://travis-ci.org/vdolek/angular-resize-event)
-[![npm version](https://badge.fury.io/js/angular-resize-event.svg)](https://badge.fury.io/js/angular-resize-event)
 
 ## Using the library
 
@@ -49,7 +52,7 @@ export class AppModule { }
 
 Once your library is imported, you can use its `resized` directive in your Angular application:
 
-```xml
+```html
 <div (resized)="onResized($event)"></div>
 ```
 

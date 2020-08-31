@@ -3,6 +3,7 @@ import { ResizeSensor } from 'css-element-queries';
 import { ResizedEvent } from './resized-event';
 
 @Directive({
+  // tslint:disable-next-line:directive-selector
   selector: '[resized]'
 })
 export class ResizedDirective implements OnInit, OnDestroy {
@@ -18,20 +19,20 @@ export class ResizedDirective implements OnInit, OnDestroy {
   constructor(private readonly element: ElementRef) {
   }
 
-  ngOnInit() {
-    // only initialize resize watching if sensor is available
+  ngOnInit(): void {
+    // only initialize resize watching if sensor is availablei
     if (ResizeSensor) {
       this.resizeSensor = new ResizeSensor(this.element.nativeElement, () => this.onResized());
     }
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.resizeSensor) {
       this.resizeSensor.detach();
     }
   }
 
-  private onResized() {
+  private onResized(): void {
     const newWidth = this.element.nativeElement.clientWidth;
     const newHeight = this.element.nativeElement.clientHeight;
 

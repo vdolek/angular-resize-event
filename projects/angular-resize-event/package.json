@@ -1,10 +1,11 @@
 {
   "name": "angular-resize-event",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/vdolek/angular-resize-event"
   },
+  "homepage": "https://github.com/vdolek/angular-resize-event#angular-resize-event",
   "author": {
     "name": "Martin Volek",
     "email": "martin@vdolek.cz"
@@ -14,16 +15,13 @@
     "resize",
     "event"
   ],
-  "bugs": {
-    "url": "https://github.com/vdolek/angular-resize-event/issues"
-  },
   "license": "MIT",
-  "dependencies": {
-    "css-element-queries": "1.2.3"
-  },
   "peerDependencies": {
-    "@angular/core": "7 - 9",
-    "rxjs": "6",
-    "core-js": "2 - 3"
+    "@angular/common": "^10.0.14",
+    "@angular/core": "^10.0.14"
+  },
+  "dependencies": {
+    "css-element-queries": "^1.2.3",
+    "tslib": "^2.0.0"
   }
 }

@@ -8,10 +8,10 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/angular-resize-event/tsconfig.lib.json"
+      "path": "./tsconfig.app.json"
     },
     {
-      "path": "./projects/angular-resize-event/tsconfig.spec.json"
+      "path": "./tsconfig.spec.json"
     }
 ]
 }

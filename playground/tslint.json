@@ -1,8 +1,5 @@
 {
   "extends": "tslint:recommended",
-  "rulesDirectory": [
-    "codelyzer"
-  ],
   "rules": {
     "align": {
       "options": [
@@ -16,6 +13,21 @@
     "deprecation": {
       "severity": "warning"
     },
+    "component-class-suffix": true,
+    "contextual-lifecycle": true,
+    "directive-class-suffix": true,
+    "directive-selector": [
+      true,
+      "attribute",
+      "app",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "app",
+      "kebab-case"
+    ],
     "eofline": true,
     "import-blacklist": [
       true,
@@ -121,9 +133,6 @@
         "check-typecast"
       ]
     },
-    "component-class-suffix": true,
-    "contextual-lifecycle": true,
-    "directive-class-suffix": true,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
@@ -136,5 +145,8 @@
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true
-  }
+  },
+  "rulesDirectory": [
+    "codelyzer"
+  ]
 }
