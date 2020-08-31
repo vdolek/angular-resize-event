@@ -16,6 +16,10 @@ It is as simple as:
 
 It internally uses `ResizeSensor` from [CSS Element Queries](https://github.com/marcj/css-element-queries).
 
+## Playground
+
+[StackBlitz playground](https://stackblitz.com/edit/angular-resize-event-playground?file=src/app/app.component.html)
+
 ## Using the library
 
 Import the library in any Angular application by running:

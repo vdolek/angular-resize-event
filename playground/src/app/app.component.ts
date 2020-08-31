@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
 
 import { ResizedEvent } from 'angular-resize-event';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
+  selector: 'my-app',
+  templateUrl: './app.component.html',
+  styleUrls: [ './app.component.css' ]
 })
-export class AppComponent {
+export class AppComponent  {
   width = 0;
   height = 0;
 
