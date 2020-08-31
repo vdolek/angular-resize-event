@@ -1,24 +1,79 @@
-# AngularResizeEvent
+# Angular Resize Event
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.14.
+[![github version](https://img.shields.io/github/package-json/v/vdolek/angular-resize-event/master?label=github)](https://github.com/vdolek/angular-resize-event)
+[![npm version](https://img.shields.io/npm/v/angular-resize-event)](https://www.npmjs.com/package/angular-resize-event)
+[![build status](https://img.shields.io/github/workflow/status/vdolek/angular-resize-event/CI/master)](https://github.com/vdolek/angular-resize-event/actions?query=workflow%3ACI)
+[![downloads](https://img.shields.io/npm/dt/angular-resize-event)](https://www.npmjs.com/package/angular-resize-event)
+[![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/vdolek/angular-resize-event)](https://snyk.io/test/github/vdolek/angular-resize-event)
 
-## Code scaffolding
+Angular directive for detecting changes of an element size.
 
-Run `ng generate component component-name --project angular-resize-event` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-resize-event`.
-> Note: Don't forget to add `--project angular-resize-event` or else it will be added to the default project in your `angular.json` file. 
+It is as simple as:
 
-## Build
+```html
+<div (resized)="onResized($event)"></div>
+```
 
-Run `ng build angular-resize-event` to build the project. The build artifacts will be stored in the `dist/` directory.
+It internally uses `ResizeSensor` from [CSS Element Queries](https://github.com/marcj/css-element-queries).
 
-## Publishing
+## Using the library
 
-After building your library with `ng build angular-resize-event`, go to the dist folder `cd dist/angular-resize-event` and run `npm publish`.
+Import the library in any Angular application by running:
 
-## Running unit tests
+```bash
+$ npm install angular-resize-event
+```
 
-Run `ng test angular-resize-event` to execute the unit tests via [Karma](https://karma-runner.github.io).
+and then from your Angular `AppModule`:
 
-## Further help
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+// Import the library module
+import { AngularResizedEventModule } from 'angular-resize-event';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+
+    // Specify AngularResizedEventModule library as an import
+    AngularResizedEventModule
+  ],
+  providers: [],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+```
+
+Once your library is imported, you can use its `resized` directive in your Angular application:
+
+```html
+<div (resized)="onResized($event)"></div>
+```
+
+```typescript
+import { Component } from '@angular/core';
+
+// Import the resized event model
+import { ResizedEvent } from 'angular-resize-event';
+
+@Component({...})
+class MyComponent {
+  width: number;
+  height: number;
+
+  onResized(event: ResizedEvent) {
+    this.width = event.newWidth;
+    this.height = event.newHeight;
+  }
+}
+```
+
+## License
+
+MIT © [Martin Volek](mailto:martin@vdolek.cz)

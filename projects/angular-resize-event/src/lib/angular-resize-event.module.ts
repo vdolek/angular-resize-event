@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { AngularResizeEventComponent } from './angular-resize-event.component';
-
-
+import { ResizedDirective } from './resized.directive';
 
 @NgModule({
-  declarations: [AngularResizeEventComponent],
+  declarations: [ResizedDirective],
   imports: [
   ],
-  exports: [AngularResizeEventComponent]
+  exports: [ResizedDirective]
 })
 export class AngularResizeEventModule { }
