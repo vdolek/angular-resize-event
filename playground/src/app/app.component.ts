@@ -12,6 +12,7 @@ export class AppComponent  {
   height = 0;
 
   onResized(event: ResizedEvent): void {
+    console.warn(event);
     this.width = event.newWidth;
     this.height = event.newHeight;
   }

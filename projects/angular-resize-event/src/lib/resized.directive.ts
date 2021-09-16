@@ -1,5 +1,4 @@
 import { Directive, ElementRef, EventEmitter, OnInit, Output, OnDestroy } from '@angular/core';
-import { ResizeSensor } from 'css-element-queries';
 import { ResizedEvent } from './resized-event';
 
 @Directive({
@@ -7,34 +6,26 @@ import { ResizedEvent } from './resized-event';
   selector: '[resized]'
 })
 export class ResizedDirective implements OnInit, OnDestroy {
-
   @Output()
   readonly resized = new EventEmitter<ResizedEvent>();
 
   private oldWidth: number;
   private oldHeight: number;
 
-  private resizeSensor: ResizeSensor;
-
   constructor(private readonly element: ElementRef) {
   }
 
   ngOnInit(): void {
-    // only initialize resize watching if sensor is availablei
-    if (ResizeSensor) {
-      this.resizeSensor = new ResizeSensor(this.element.nativeElement, () => this.onResized());
-    }
+    this.onResized();
+    setTimeout(() => this.onResized(), 1000);
   }
 
   ngOnDestroy(): void {
-    if (this.resizeSensor) {
-      this.resizeSensor.detach();
-    }
   }
 
   private onResized(): void {
-    const newWidth = this.element.nativeElement.clientWidth;
-    const newHeight = this.element.nativeElement.clientHeight;
+    const newWidth = 10;
+    const newHeight = 20;
 
     if (newWidth === this.oldWidth && newHeight === this.oldHeight) {
       return;
@@ -53,5 +44,4 @@ export class ResizedDirective implements OnInit, OnDestroy {
 
     this.resized.emit(event);
   }
-
 }
