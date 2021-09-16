@@ -6,7 +6,7 @@
 [![downloads](https://img.shields.io/npm/dt/angular-resize-event)](https://www.npmjs.com/package/angular-resize-event)
 [![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/vdolek/angular-resize-event)](https://snyk.io/test/github/vdolek/angular-resize-event)
 
-Angular directive for detecting changes of an element size.
+Angular 12 directive for detecting changes of an element size.
 
 It is as simple as:
 
@@ -14,7 +14,9 @@ It is as simple as:
 <div (resized)="onResized($event)"></div>
 ```
 
-It internally uses `ResizeSensor` from [CSS Element Queries](https://github.com/marcj/css-element-queries).
+It internally uses browser native [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver). Therefore it is not supported in IE.
+
+For Angular 11 you can use version 2.1.0 which internally uses uses `ResizeSensor` from [CSS Element Queries](https://github.com/marcj/css-element-queries) that is supported in IE.
 
 ## Playground
 
@@ -72,8 +74,8 @@ class MyComponent {
   height: number;
 
   onResized(event: ResizedEvent) {
-    this.width = event.newWidth;
-    this.height = event.newHeight;
+    this.width = event.newRect.width;
+    this.height = event.newRect.height;
   }
 }
 ```
