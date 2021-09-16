@@ -3,8 +3,5 @@
   "dest": "../../dist/angular-resize-event",
   "lib": {
     "entryFile": "src/public-api.ts"
-  },
-  "allowedNonPeerDependencies": [
-    "css-element-queries"
-  ]
+  }
 }

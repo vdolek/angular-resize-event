@@ -1,47 +1,38 @@
-import { Directive, ElementRef, EventEmitter, OnInit, Output, OnDestroy } from '@angular/core';
-import { ResizedEvent } from './resized-event';
+import { Directive, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit, Output } from '@angular/core';
+import { ResizedEvent } from './resized.event';
 
 @Directive({
-  // tslint:disable-next-line:directive-selector
   selector: '[resized]'
 })
 export class ResizedDirective implements OnInit, OnDestroy {
+  private observer: ResizeObserver;
+  private oldRect?: DOMRectReadOnly;
+
   @Output()
-  readonly resized = new EventEmitter<ResizedEvent>();
+  public readonly resized;
 
-  private oldWidth: number;
-  private oldHeight: number;
-
-  constructor(private readonly element: ElementRef) {
+  public constructor(
+    private readonly element: ElementRef,
+    private readonly zone: NgZone
+  )
+  {
+    this.resized = new EventEmitter<ResizedEvent>();
+    this.observer = new ResizeObserver(entries => this.zone.run(() => this.observe(entries)));
   }
 
-  ngOnInit(): void {
-    this.onResized();
-    setTimeout(() => this.onResized(), 1000);
+  public ngOnInit(): void {
+    this.observer.observe(this.element.nativeElement)
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
+    this.observer.disconnect();
   }
 
-  private onResized(): void {
-    const newWidth = 10;
-    const newHeight = 20;
-
-    if (newWidth === this.oldWidth && newHeight === this.oldHeight) {
-      return;
-    }
-
-    const event = new ResizedEvent(
-      this.element,
-      newWidth,
-      newHeight,
-      this.oldWidth,
-      this.oldHeight
-    );
-
-    this.oldWidth = this.element.nativeElement.clientWidth;
-    this.oldHeight = this.element.nativeElement.clientHeight;
-
-    this.resized.emit(event);
+  private observe(entries: ResizeObserverEntry[]): void {
+    const domSize = entries[0];
+    const resizedEvent = new ResizedEvent(domSize.contentRect, this.oldRect);
+    this.oldRect = domSize.contentRect;
+    this.resized.emit(resizedEvent);
   }
 }
+

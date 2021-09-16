@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
-
 import { ResizedEvent } from 'angular-resize-event';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {
+export class AppComponent {
   width = 0;
   height = 0;
 
-  onResized(event: ResizedEvent): void {
-    console.warn(event);
-    this.width = event.newWidth;
-    this.height = event.newHeight;
+  onResized(event: ResizedEvent) {
+    console.warn('event', event);
+    this.width = event.newRect.width;
+    this.height = event.newRect.height;
   }
 }
