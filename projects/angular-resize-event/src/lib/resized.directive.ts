@@ -1,31 +1,38 @@
 import { Directive, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit, Output } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
+import { Inject } from '@angular/core';
 import { ResizedEvent } from './resized.event';
 
 @Directive({
   selector: '[resized]'
 })
 export class ResizedDirective implements OnInit, OnDestroy {
-  private observer: ResizeObserver;
+  private observer: ResizeObserver | undefined;
   private oldRect?: DOMRectReadOnly;
+  private isBrowser = isPlatformBrowser(this.platformId);
 
   @Output()
-  public readonly resized;
+  public readonly resized: EventEmitter<ResizedEvent>;
 
   public constructor(
     private readonly element: ElementRef,
-    private readonly zone: NgZone
+    private readonly zone: NgZone,
+    @Inject(PLATFORM_ID) private platformId: object,
   )
   {
     this.resized = new EventEmitter<ResizedEvent>();
-    this.observer = new ResizeObserver(entries => this.zone.run(() => this.observe(entries)));
+    if (this.isBrowser) {
+      this.observer = new ResizeObserver(entries => this.zone.run(() => this.observe(entries)));
+    }
   }
 
   public ngOnInit(): void {
-    this.observer.observe(this.element.nativeElement)
+    this.observer?.observe(this.element.nativeElement)
   }
 
   public ngOnDestroy(): void {
-    this.observer.disconnect();
+    this.observer?.disconnect();
   }
 
   private observe(entries: ResizeObserverEntry[]): void {
