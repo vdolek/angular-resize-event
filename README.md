@@ -6,7 +6,7 @@
 [![downloads](https://img.shields.io/npm/dt/angular-resize-event)](https://www.npmjs.com/package/angular-resize-event)
 [![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/vdolek/angular-resize-event)](https://snyk.io/test/github/vdolek/angular-resize-event)
 
-Angular 12 directive for detecting changes of an element size.
+Angular 14 directive for detecting changes of an element size.
 
 It is as simple as:
 
