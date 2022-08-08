@@ -35,5 +35,7 @@
       }
     }
   },
-  "defaultProject": "angular-resize-event"
+  "cli": {
+    "analytics": false
+  }
 }
